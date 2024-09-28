@@ -7,7 +7,8 @@ const nextConfig = {
     loader: "akamai",
     path: "",
   },
-  assetPrefix: "./",
+  assetPrefix:'https://nemobii.github.io/portfolio-page/',
+  reactStrictMode: true,
 };
 
 export default nextConfig;
