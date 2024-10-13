@@ -15,7 +15,7 @@ const MobileHeader = () => {
     return (
         <header className='md:hidden'>
             <div>
-                <Link href="/"><Logo/></Link>
+                <Logo/>
             </div>
             <button onClick={toggleMenu}>
                 {isOpen ? 'Close' : 'Menu'}

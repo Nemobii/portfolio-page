@@ -1,13 +1,10 @@
+// components/Layout.tsx
+import React from 'react';
 import Header from './Header';
-import React, { ReactNode } from 'react';
 import Footer from './Footer';
 import MobileHeader from './MobileHeader';
 
-interface LayoutProps {
-    children: ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <div className='flex flex-col min-h-screen'>
             <Header />
