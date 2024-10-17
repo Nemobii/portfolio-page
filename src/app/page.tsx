@@ -5,7 +5,7 @@ import React from 'react';
 import Quote from "./components/Quote";
 
 const Home: React.FC = () => {
-  const images = getImages("images/gallery");
+  const images = getImages("images/Animals");
 
   return (
     <Layout>
