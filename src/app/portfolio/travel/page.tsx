@@ -4,7 +4,7 @@ import { getImages } from '@/app/utils/imageUtils';
 
 
 const Travel: React.FC = () => {
-    const images = getImages("images/projects/project-01");
+    const images = getImages("images/Travel");
 
     return (
         <Layout>
