@@ -18,7 +18,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
                 {images.map((image, idx) => (
                     <div key={image} className="overflow-hidden hover:-translate-y-2 transition-all duration-300">
                         <Image
-                            src={image}
+                            src={`portfolio-page/${image}`}
                             alt={`Image ${idx + 1}`}
                             width={860}
                             height={860}
