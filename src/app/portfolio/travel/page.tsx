@@ -1,15 +1,11 @@
-import Gallery from '@/app/components/Gallery';
 import Layout from '@/app/components/Layout';
-import { getImages } from '@/app/utils/imageUtils';
 
 
 const Travel: React.FC = () => {
-    const images = getImages("images/Travel");
 
     return (
         <Layout>
             <div className='max-w-[1200px] mx-auto'>
-            <Gallery images={images} />
             </div>    
         </Layout>
     );
