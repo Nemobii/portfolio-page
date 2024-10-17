@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Lightbox from 'yet-another-react-lightbox';
-import Image from 'next/image'
 
 interface GalleryProps {
     images: string[];
@@ -17,9 +16,9 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
             <div className="grid grid-cols-3 gap-4">
                 {images.map((image, idx) => (
                     <div key={image} className="overflow-hidden hover:-translate-y-2 transition-all duration-300">
-                        {image}
-                        <Image
-                            src={`${image}`}
+                        /portfolio-page{image}
+                        <img
+                            src={`/portfolio-page${image}`}
                             alt={`Image ${idx + 1}`}
                             width={860}
                             height={860}
