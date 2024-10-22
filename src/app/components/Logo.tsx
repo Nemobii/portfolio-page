@@ -1,12 +1,11 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 const Logo = () => {
     return (
         <Link href="/">
             {/* Replace with your logo image */}
-            <Image
-                src="/images/logo.png" // Update with your logo path
+            <img
+                src="logo.png" // Update with your logo path
                 alt="Logo"
                 width={150} // Adjust as necessary
                 height={50} // Adjust as necessary

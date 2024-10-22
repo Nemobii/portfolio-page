@@ -3,7 +3,7 @@ import Logo from './Logo';
 
 const Header = () => {
     return (
-        <header className='flex min-h-12 p-6 pr-20 justify-between'>
+        <header className='fixed w-full flex min-h-32 max-h-32 p-6 pr-20 justify-between'>
             <Logo/>
             <nav>
                 <ul className='flex h-full'>

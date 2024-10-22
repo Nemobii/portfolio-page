@@ -21,8 +21,94 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  h1,
+  .h1 {
+      @apply font-bold;
+      @apply text-[1.75rem] leading-[2.375rem];
+      @apply md:text-[3rem] md:leading-[3.5rem];
+      @apply xl:text-[4rem] xl:leading-[5rem];
+
+      &.hardcoded {
+          @apply text-[1.75rem] leading-[2.375rem];
+          @apply md:text-[3rem] md:leading-[3.5rem];
+          @apply xl:text-[3rem] xl:leading-[3.5rem];
+      }
+  }
+
+  h2,
+  .h2 {
+      @apply font-bold;
+      @apply text-[1.5rem] leading-[2.125rem];
+      @apply md:text-[1.75rem] md:leading-[2.375rem];
+      @apply xl:text-[2.5rem] xl:leading-[3.375rem];
+  }
+
+  h3,
+  .h3 {
+      @apply font-bold;
+      @apply text-[1.25rem] leading-[1.875rem];
+      @apply md:text-[1.25rem] md:leading-[1.875rem];
+      @apply xl:text-[1.75rem] xl:leading-[2.375rem];
+  }
+
+  h4,
+  .h4 {
+      @apply font-medium;
+      @apply text-[1rem] leading-[1.5rem];
+      @apply md:text-[1rem] md:leading-[1.5rem];
+      @apply xl:text-[1.25rem] xl:leading-[1.875rem];
+  }
+
+  h5,
+  .h5 {
+      @apply font-medium;
+      @apply text-[0.875rem] leading-[1.375rem];
+      @apply md:text-[1rem] md:leading-[1.5rem];
+  }
+
+  .text-b {
+      @apply font-medium;
+      @apply text-[1rem] leading-[1.5rem];
+      @apply md:text-[1rem] md:leading-[1.5rem];
+      @apply xl:text-[1.25rem] xl:leading-[1.875rem];
+  }
+
+  .text-lg {
+      @apply font-light;
+      @apply text-[1rem] leading-[1.5rem];
+      @apply md:text-[1rem] md:leading-[1.5rem];
+      @apply xl:text-[1.25rem] xl:leading-[1.875rem];
+  }
+
+  .text-sm-b {
+      @apply font-medium;
+      @apply text-[0.875rem] leading-[1.375rem];
+      @apply md:text-[1rem] md:leading-[1.5rem];
+      @apply xl:text-[1rem] xl:leading-[1.5rem];
+  }
+
+  .text-sm {
+      @apply font-light;
+      @apply text-[0.875rem] leading-[1.375rem];
+      @apply md:text-[1rem] md:leading-[1.5rem];
+      @apply xl:text-[1rem] xl:leading-[1.5rem];
+  }
+
+  .text-xs {
+      @apply font-light;
+      @apply text-[0.75rem] leading-[1.125rem];
+      @apply md:text-[0.75rem] md:leading-[1.125rem];
+      @apply xl:text-[0.75rem] xl:leading-[1.125rem];
   }
 }

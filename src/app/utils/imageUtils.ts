@@ -7,5 +7,5 @@ export const getImages = (subDirectory: string): string[] => {
     const imageFiles = fs.readdirSync(imagesDirectory);
     
     // Return the full path for each image
-    return imageFiles.map(file => `/${subDirectory}/${file}`);
+    return imageFiles.map(file => `portfolio-page/${subDirectory}/${file}`);
 };
