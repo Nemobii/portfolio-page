@@ -15,7 +15,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
         <div>
             <div className="grid grid-cols-3 gap-4">
                 {images.map((image, idx) => (
-                    <div key={image} className="overflow-hidden hover:-translate-y-2 transition-all duration-300">
+                    <div key={image} className="overflow-hidden hover:-translate-y-2 transition-all duration-300 rounded-lg">
                         <img
                             src={`${image}`}
                             alt={`Image ${idx + 1}`}

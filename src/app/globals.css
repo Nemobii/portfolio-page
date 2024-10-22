@@ -112,3 +112,17 @@ html {
       @apply xl:text-[0.75rem] xl:leading-[1.125rem];
   }
 }
+
+@keyframes testAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+
+}
+
+.test-animation {
+  animation: testAnimation 1s ease forwards;
+}
