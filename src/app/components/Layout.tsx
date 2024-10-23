@@ -1,16 +1,19 @@
-// components/Layout.tsx
+"use client"
+
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import MobileHeader from './MobileHeader';
+import { usePathname } from 'next/navigation'
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const path = usePathname();
+    const isHomePage = path === '/';
+
     return (
-        <div className='flex flex-col min-h-screen'>
-            <Header />
-            <MobileHeader />
-            <main className='flex-1'>{children}</main>
-            <Footer />
+        <div className="flex flex-col min-h-screen">
+            <Header isHome={isHomePage} />
+            <main className={`flex-1 w-full mx-auto gap-y-6`}>{children}</main>
+            <Footer isHome={isHomePage} />
         </div>
     );
 };

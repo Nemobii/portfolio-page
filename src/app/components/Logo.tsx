@@ -1,18 +1,15 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 const Logo = () => {
     return (
         <Link href="/">
-            {/* Replace with your logo image */}
-            <Image
-                src="/images/logo.png" // Update with your logo path
+            <img
+                src="/portfolio-page/images/logo.png"
                 alt="Logo"
-                width={150} // Adjust as necessary
-                height={50} // Adjust as necessary
+                width={150}
+                height={50}
+                className='object-cover'
             />
-            {/* Alternatively, you can use text instead of an image */}
-            {/* <h1>Your Company Name</h1> */}
         </Link>
     );
 };

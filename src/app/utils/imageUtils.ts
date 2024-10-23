@@ -4,8 +4,9 @@ import path from 'path';
 
 export const getImages = (subDirectory: string): string[] => {
     const imagesDirectory = path.join(process.cwd(), 'public', subDirectory);
+    console.log(imagesDirectory)
     const imageFiles = fs.readdirSync(imagesDirectory);
     
     // Return the full path for each image
-    return imageFiles.map(file => `/${subDirectory}/${file}`);
+    return imageFiles.map(file => `/portfolio-page/${subDirectory}/${file}`);
 };
