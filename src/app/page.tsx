@@ -38,7 +38,7 @@ const Home: React.FC = () => {
     <Layout>
       <section id="section-1" className="h-screen py-40">
         <div className="flex justify-center mb-12">
-          <h1 className="mb-2">Titel H1</h1>
+          <h1 className="mb-2">Nico's Blog, hier findest du Bilder meiner Projekte und Reisen</h1>
         </div>
         <div className="flex gap-x-6">
           <div>
@@ -63,15 +63,14 @@ const Home: React.FC = () => {
       </section>
       <section id="section-2" className="h-screen py-40 relative">
         <div className="flex flex-col">
-          <h2 className="self-center mb-6">Latest Travel</h2>
+          <h2 className="self-center mb-6">Letzte Reise</h2>
           <div className="text-center mx-auto max-w-[860px] mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-            consectetur est, assumenda expedita omnis quod delectus eum unde
-            illo reprehenderit excepturi pariatur optio eos cumque accusantium
-            animi odit minima dolor?
+          Auf meiner letzten Reise erkundete ich die faszinierenden Landschaften Tansanias und Sansibars. Auf einer Safari durch die Nationalparks Serengeti, Ngorogoro, Tarangire und Lake Manyara erlebte ich beeindruckende 
+          Tierbeobachtungen und konnte zahlreiche Arten, darunter auch Jungtiere, fotografieren. 
+          Nach den abenteuerlichen Jeepfahrten erholten wir uns zum Abschluss auf den traumhaften Stränden von Sansibar, wo das blaue Meer und die warmen Temperaturen für pure Entspannung sorgten.
           </div>
           <div className="flex justify-center">
-            <Link href="/portfolio/travel">awdawdaw</Link>
+            <Link href="/portfolio/travel">Tansania</Link>
           </div>
         </div>
         <div>
