@@ -26,7 +26,7 @@ const FloatingImage: React.FC<FloatingImageProps> = ({ src, alt, delay }) => {
 
   return (
     <div className={`relative opacity-0 translate-y-5 transition-all duration-1000 ${isVisible ? 'opacity-100 !translate-y-0' : ''}`}>
-      <Image height={200} width={200} src={src} alt={alt} className="h-auto block" />
+      <Image height={200} width={200} src={src} alt={alt} className="h-auto block rounded-full shadow-lg" />
     </div>
   );
 };
