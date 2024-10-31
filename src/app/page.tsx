@@ -38,7 +38,7 @@ const Home: React.FC = () => {
     <Layout>
       <section id="section-1" className="h-screen py-40">
         <div className="flex justify-center mb-12">
-          <h1 className="mb-2">Nico's Blog, hier findest du Bilder meiner Projekte und Reisen</h1>
+          <h1 className="mb-2">Nico&apos;s Blog, hier findest du Bilder meiner Projekte und Reisen</h1>
         </div>
         <div className="flex gap-x-6">
           <div>
