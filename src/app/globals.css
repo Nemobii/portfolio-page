@@ -126,3 +126,41 @@ html {
 .test-animation {
   animation: testAnimation 1s ease forwards;
 }
+
+@layer components {
+  /* Navigationselement */
+  .nav-item {
+    @apply relative text-base font-semibold uppercase mx-4 cursor-pointer;
+  }
+
+  .nav-item a {
+    @apply no-underline text-black relative transition-all duration-300;
+  }
+
+  /* Hover-Effekt für Links */
+  .nav-item a::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-violet-700 transition-all duration-300;
+  }
+
+  .nav-item a:hover::after {
+    @apply w-full;
+  }
+
+  /* Dropdown-Menü */
+  .dropdown {
+    @apply hidden absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-lg p-2 z-10;
+    transform-origin: top center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Links im Dropdown */
+  .dropdown a {
+    @apply block px-4 py-2 text-black hover:bg-gray-100 transition-colors duration-200;
+  }
+
+  /* Sichtbarkeit des Dropdowns bei Hover */
+  .nav-item:hover .dropdown {
+    @apply block;
+  }
+}

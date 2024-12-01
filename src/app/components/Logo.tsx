@@ -6,9 +6,9 @@ const Logo = () => {
             <img
                 src="/portfolio-page/images/logo.png"
                 alt="Logo"
-                width={150}
-                height={50}
-                className='object-cover'
+                width={200} /* Erhöhe die Breite */
+                height={70} /* Erhöhe die Höhe */
+                className="object-cover"
             />
         </Link>
     );

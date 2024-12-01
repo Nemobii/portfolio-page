@@ -1,14 +1,13 @@
 "use client";
 import Layout from "./components/Layout";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import FloatingImage from "./components/FloatingImage";
-
 
 const Home: React.FC = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
-  const handleScroll = (event: { deltaY: number; }) => {
+  const handleScroll = (event: { deltaY: number }) => {
     if (event.deltaY > 0) {
       setCurrentSection((prev) => Math.min(prev + 1, 1));
     } else {
@@ -21,53 +20,64 @@ const Home: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('wheel', handleScroll, { passive: false });
+    window.addEventListener("wheel", handleScroll, { passive: false });
     return () => {
-      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener("wheel", handleScroll);
     };
   }, []);
 
   useEffect(() => {
     const element = document.getElementById(`section-${currentSection + 1}`);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   }, [currentSection]);
 
   return (
     <Layout>
-      <section id="section-1" className="h-screen py-40">
-        <div className="flex justify-center mb-12">
-          <h1 className="mb-2">Nico&apos;s Blog, hier findest du Bilder meiner Projekte und Reisen</h1>
-        </div>
-        <div className="flex gap-x-6">
-          <div>
-            <p className="text-center mb-6">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
-              itaque consequuntur odit ea. Illum sunt ducimus odio omnis sit
-              quaerat, voluptas impedit? Voluptate quae sapiente corrupti
-              similique molestias ab voluptatibus. Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit. Porro reprehenderit placeat adipisci
-              esse at impedit nobis, aspernatur error, cupiditate doloribus in
-              assumenda, repellat sit itaque id molestiae iure aut ullam. Lorem
-              ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-              atque aspernatur dicta beatae quia incidunt repellat ratione,
-              perferendis ducimus minus, veniam iusto dolorum commodi iste
-              cumque? Quaerat facilis eos labore.
-            </p>
-          </div>
-        </div>
-        <div className="flex justify-center py-6">
-          <button onClick={() => scrollToSection(1)}>Go to Section 2</button>
-        </div>
+      <style jsx global>{`
+        @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+        #section-1 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          text-align: center;
+        }
+
+        h1 {
+          font-family: "Dancing Script", cursive;
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-family: "Roboto", sans-serif;
+          font-size: 1.5rem;
+          max-width: 600px;
+        }
+      `}</style>
+      <section id="section-1">
+        <h1>Hi, ich bin Nico!</h1>
+        <p>Ein Fotograf und Abenteurer, der die Welt durch die Linse entdeckt.</p>
+        <button className="mt-6" onClick={() => scrollToSection(1)}>
+          Go to Section 2
+        </button>
       </section>
       <section id="section-2" className="h-screen py-40 relative">
         <div className="flex flex-col">
           <h2 className="self-center mb-6">Letzte Reise</h2>
           <div className="text-center mx-auto max-w-[860px] mb-6">
-          Auf meiner letzten Reise erkundete ich die faszinierenden Landschaften Tansanias und Sansibars. Auf einer Safari durch die Nationalparks Serengeti, Ngorogoro, Tarangire und Lake Manyara erlebte ich beeindruckende 
-          Tierbeobachtungen und konnte zahlreiche Arten, darunter auch Jungtiere, fotografieren. 
-          Nach den abenteuerlichen Jeepfahrten erholten wir uns zum Abschluss auf den traumhaften Stränden von Sansibar, wo das blaue Meer und die warmen Temperaturen für pure Entspannung sorgten.
+            Auf meiner letzten Reise erkundete ich die faszinierenden
+            Landschaften Tansanias und Sansibars. Auf einer Safari durch die
+            Nationalparks Serengeti, Ngorogoro, Tarangire und Lake Manyara
+            erlebte ich beeindruckende Tierbeobachtungen und konnte zahlreiche
+            Arten, darunter auch Jungtiere, fotografieren. Nach den
+            abenteuerlichen Jeepfahrten erholten wir uns zum Abschluss auf den
+            traumhaften Stränden von Sansibar, wo das blaue Meer und die warmen
+            Temperaturen für pure Entspannung sorgten.
           </div>
           <div className="flex justify-center">
             <Link href="/portfolio/travel">Tansania</Link>
