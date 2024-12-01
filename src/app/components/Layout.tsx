@@ -12,8 +12,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <div className="flex flex-col min-h-screen">
             <Header isHome={isHomePage} />
-            <main className={`flex-1 w-full mx-auto gap-y-6`}>{children}</main>
-            <Footer isHome={isHomePage} />
+            <main className={`flex-1 w-full mx-auto gap-y-6 bg-grey-light`}>{children}</main>
+            <Footer />
         </div>
     );
 };

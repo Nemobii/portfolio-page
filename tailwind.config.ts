@@ -9,11 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "white": "#FFFFFF",
+        "grey": {
+          "light": "#ACA8A8",
+          "dark": "#616161"
+        },
+        "black": "#292929",
       },
       backgroundImage: {
-        "hero-image": "url('/portfolio-page/images/Lense.jpg')"
+        "hero-image": "url('/portfolio-page/images/Lense.jpg')",
+        "home": "url(/portfolio-page/images/DSC_7190.jpg)",
+        "parallax": "url(/portfolio-page/images/Parallax.jpg)",
       },
       animation: {
         'scale-in': 'scaleIn 30s ease forwards 0.5s',
@@ -24,6 +30,11 @@ const config: Config = {
           '100%': { transform: 'scale(2)' },
         },
       },
+    },
+      fontFamily: {
+        'roboto': ['Roboto', 'Arial', 'sans-serif'],
+        'dancing-script': ['DancingScript', 'Arial', 'sans-serif'],
+        'raleway': ['Raleway', 'Arial', 'sans-serif'],
     },
   },
   plugins: [],

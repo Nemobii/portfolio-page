@@ -28,13 +28,13 @@ const Header: React.FC<HeaderProps> = ({ isHome }) => {
   }, []);
 
   return (
-    <div className={`${isHome ? '' : 'min-h-[128px]'}`}>
+    <div className={`${isHome ? '' : 'min-h-[100px]'}`}>
       <header
-        className={`z-20 w-full flex items-center justify-center px-6 py-4 bg-violet-100 transition-all duration-300 ${
+        className={`z-20 w-full flex items-center justify-center px-6 py-4 bg-white transition-all duration-300 h-[100px] ${
           isHome ? 'fixed' : ''
         } ${isFixed && !isHome ? 'fixed top-0 w-full' : ''}`}
       >
-        <nav className="flex items-center">
+        <nav className="flex items-center font-raleway">
           {/* Navigation links auf der linken Seite */}
           <ul className="flex gap-4">
             <li className="nav-item">

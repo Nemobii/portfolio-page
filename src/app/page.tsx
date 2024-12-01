@@ -1,72 +1,19 @@
 "use client";
 import Layout from "./components/Layout";
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import FloatingImage from "./components/FloatingImage";
 
 const Home: React.FC = () => {
-  const [currentSection, setCurrentSection] = useState(0);
-
-  const handleScroll = (event: { deltaY: number }) => {
-    if (event.deltaY > 0) {
-      setCurrentSection((prev) => Math.min(prev + 1, 1));
-    } else {
-      setCurrentSection((prev) => Math.max(prev - 1, 0));
-    }
-  };
-
-  const scrollToSection = (sectionIndex: React.SetStateAction<number>) => {
-    setCurrentSection(sectionIndex);
-  };
-
-  useEffect(() => {
-    window.addEventListener("wheel", handleScroll, { passive: false });
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const element = document.getElementById(`section-${currentSection + 1}`);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [currentSection]);
-
   return (
     <Layout>
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&display=swap");
-
-        #section-1 {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          text-align: center;
-        }
-
-        h1 {
-          font-family: "Dancing Script", cursive;
-          font-size: 3rem;
-          margin-bottom: 1rem;
-        }
-
-        p {
-          font-family: "Roboto", sans-serif;
-          font-size: 1.5rem;
-          max-width: 600px;
-        }
-      `}</style>
-      <section id="section-1">
-        <h1>Hi, ich bin Nico!</h1>
-        <p>Ein Fotograf und Abenteurer, der die Welt durch die Linse entdeckt.</p>
-        <button className="mt-6" onClick={() => scrollToSection(1)}>
-          Go to Section 2
-        </button>
+      <section id="section-1" className="flex flex-col justify-center text-center h-screen bg-home bg-top-right">
+        <div className="pr-96">
+          <h1 className="font-dancing-script text-white text-[128px] leading-normal">Hi, ich bin Nico!</h1>
+          <p className="text-white text-[32px]">Ein Fotograf und Abenteurer, der die Welt durch die Linse entdeckt.</p>
+        </div>
       </section>
-      <section id="section-2" className="h-screen py-40 relative">
+      <section id="section-2" className="h-[70vh] bg-parallax bg-cover bg-no-repeat bg-fixed bg-center"></section>
+      <section id="section-3" className="h-[calc(100vh-180px)] py-40 relative bg-grey-light">
         <div className="flex flex-col">
           <h2 className="self-center mb-6">Letzte Reise</h2>
           <div className="text-center mx-auto max-w-[860px] mb-6">

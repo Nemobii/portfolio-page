@@ -1,11 +1,6 @@
-interface FooterProps {
-    isHome: boolean;
-  }
-
-
-const Footer: React.FC<FooterProps> = ({ isHome }) => {
+const Footer = () => {
     return (
-        <footer className={`w-full bottom-0 bg-blue-200 flex justify-center text-black p-6 min-h-20 max-h-20 ${ isHome ? 'fixed' : '' }`}>
+        <footer className={`w-full bottom-0 bg-grey-dark flex justify-center text-white p-6 min-h-20 max-h-20`}>
             <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </footer>
     );

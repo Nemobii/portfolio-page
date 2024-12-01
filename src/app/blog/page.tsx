@@ -1,17 +1,12 @@
 'use client';
-
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Layout from "../components/Layout";
 import Link from 'next/link';
 
 const BlogPage = () => {
   return (
+    <Layout>
     <div className="flex flex-col min-h-screen">
-      {/* Header */}
-      <Header isHome={false} />
-
-      {/* Hauptinhalt */}
-      <main className="flex-grow flex items-center justify-center bg-gray-100 px-6 py-12">
+      <div className="flex-grow flex items-center justify-center px-6 py-12">
         <div className="bg-white shadow-md rounded-lg p-8 max-w-3xl w-full">
           <h1 className="text-3xl font-bold text-center mb-6">Meine letzte Reise</h1>
           <p className="text-lg leading-7 text-gray-700">
@@ -29,7 +24,6 @@ const BlogPage = () => {
           <p className="text-lg leading-7 text-gray-700 mt-4">
             Zum Abschluss unserer Reise reisten wir nach <strong>Sansibar</strong>, wo wir an den traumhaften Stränden entspannten. Das kristallklare Wasser und die warmen Temperaturen boten den perfekten Kontrast zur Safari. Diese Reise hat mir nicht nur neue Perspektiven eröffnet, sondern auch einzigartige Momente für meine Fotografie ermöglicht – eine perfekte Mischung aus Abenteuer, Natur und Entspannung.
           </p>
-          {/* Button */}
           <div className="mt-6 flex justify-center">
             <Link href="/portfolio/travel/tansania">
               <button className="bg-violet-700 text-white px-6 py-2 rounded-md shadow-md hover:bg-violet-800 transition">
@@ -38,11 +32,9 @@ const BlogPage = () => {
             </Link>
           </div>
         </div>
-      </main>
-
-      {/* Footer */}
-      <Footer isHome={false} />
+      </div>
     </div>
+    </Layout>
   );
 };
 
