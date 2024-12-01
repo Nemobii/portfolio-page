@@ -38,7 +38,7 @@ const Home: React.FC = () => {
     <Layout>
       <section id="section-1" className="h-screen py-40">
         <div className="flex justify-center mb-12">
-          <h1 className="mb-2">Nico's Blog, hier findest du Bilder meiner Projekte und Reisen</h1>
+          <h1 className="mb-2">Nico&apos;s Blog, hier findest du Bilder meiner Projekte und Reisen</h1>
         </div>
         <div className="flex gap-x-6">
           <div>
@@ -74,37 +74,37 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div>
-          <div className="absolute -left-10 bottom-40">
+          <div className="absolute left-10 bottom-40">
             <FloatingImage
-              src="/portfolio-page/images/Animals/DSC_5847.JPG"
+              src="/portfolio-page/images/Travel/Tansania/DSC_0613-min.JPG"
               alt="Floating Image"
               delay="6000"
             />
           </div>
-          <div className="absolute -right-10 bottom-40">
+          <div className="absolute right-10 bottom-40">
             <FloatingImage
-              src="/portfolio-page/images/Animals/DSC_6030.JPG"
+              src="/portfolio-page/images/Travel/Tansania/DSC_0600-min.JPG"
               alt="Floating Image"
               delay="13000"
             />
           </div>
           <div className="absolute left-1/2 bottom-80">
             <FloatingImage
-              src="/portfolio-page/images/Animals/DSC_5930.JPG"
+              src="/portfolio-page/images/Travel/Tansania/DSC_0704-min.JPG"
               alt="Floating Image"
               delay="11000"
             />
           </div>
-          <div className="absolute -left-60 top-40">
+          <div className="absolute left-60 top-40">
             <FloatingImage
-              src="/portfolio-page/images/Animals/DSC_5994.JPG"
+              src="/portfolio-page/images/Travel/Tansania/DSC_0819.JPG"
               alt="Floating Image"
               delay="8000"
             />
           </div>
-          <div className="absolute -right-60 top-120">
+          <div className="absolute right-60 top-120">
             <FloatingImage
-              src="/portfolio-page/images/Animals/DSC_5997.JPG"
+              src="/portfolio-page/images/Travel/Tansania/DSC_1104.JPG"
               alt="Floating Image"
               delay="9500"
             />

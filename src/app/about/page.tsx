@@ -8,7 +8,7 @@ export default function Page() {
         <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-10 bg-gray-100">
           <div className="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
             <Image 
-              src="/images/AboutMe.jpg"
+              src="/portfolio-page/images/AboutMe.jpg"
               alt="About Me" 
               width={400} 
               height={400} 

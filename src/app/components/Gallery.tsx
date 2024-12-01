@@ -15,15 +15,20 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
         <div>
             <div className="grid grid-cols-3 gap-4">
                 {images.map((image, idx) => (
-                    <div key={image} className="overflow-hidden hover:-translate-y-2 transition-all duration-300 rounded-lg">
+                    <div key={image} className="relative overflow-hidden hover:-translate-y-2 transition-all duration-300 rounded-lg group">
                         <img
                             src={`${image}`}
                             alt={`Image ${idx + 1}`}
                             width={860}
                             height={860}
-                            className="w-full h-auto cursor-pointer aspect-[1/1] object-cover"
-                            onClick={() => setIndex(idx)}
+                            className="w-full h-auto aspect-[1/1] object-cover"
+                            
                         />
+                        <div className='absolute top-0 left-0 text-xl opacity-0 group-hover:opacity-20 transition-all bg-black w-full h-full text-white cursor-pointer' onClick={() => setIndex(idx)}>
+                            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-[64px]'>
+                                +
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

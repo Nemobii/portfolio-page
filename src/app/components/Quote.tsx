@@ -2,20 +2,28 @@
 import React, { useEffect, useState } from 'react'
 
 const Quote = () => {
-    const [data, setData] = useState(null);
-
+    const [joke, setJoke] = useState('');
+    const [loading, setLoading] = useState(true);
+  
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch('https://zenquotes.io/api/quotes/');
-            const result = await response.json();
-            setData(result); // Set the state with the parsed data
-        };
-        fetchData();
+      const fetchJoke = async () => {
+        try {
+          const response = await fetch('https://api.chucknorris.io/jokes/random');
+          const data = await response.json();
+          setJoke(data.value);
+        } catch (error) {
+          console.error('Error fetching joke:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchJoke();
     }, []);
 
     return (
-        <div className="w-fit mx-auto p-5 bg-teal-100">
-            {data}
+        <div className='text-white text-xl'>
+            {loading ? <p></p> : <p>{joke}</p>}
         </div>
     )
 }
