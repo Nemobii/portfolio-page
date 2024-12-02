@@ -4,9 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-
 if (typeof window !== 'undefined') {
-  delete (L.Icon.Default.prototype as any)._getIconUrl;
+  delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: string })._getIconUrl;
 
   L.Icon.Default.mergeOptions({
     iconRetinaUrl: '/portfolio-page/images/marker-icon-2x.png',
@@ -19,7 +18,7 @@ const Map = () => {
   return (
     <div style={{ width: '100%', height: '400px' }}>
       <MapContainer
-        center={[46.9481, 7.4474]} 
+        center={[46.9481, 7.4474]}
         zoom={13}
         scrollWheelZoom={false}
         style={{ height: '100%', width: '100%' }}
@@ -37,4 +36,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default Map
