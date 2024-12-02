@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Logo = () => {
     return (
         <Link href="/">
-            <img
+            <Image
                 src="/portfolio-page/images/logo.png"
                 alt="Logo"
                 width={200}

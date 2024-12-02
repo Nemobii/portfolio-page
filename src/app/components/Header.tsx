@@ -35,24 +35,20 @@ const Header: React.FC<HeaderProps> = ({ isHome }) => {
         } ${isFixed && !isHome ? 'fixed top-0 w-full' : ''}`}
       >
         <nav className="flex items-center font-raleway">
-          {/* Navigation links auf der linken Seite */}
           <ul className="flex gap-4">
             <li className="nav-item">
-              <Link href="/blog">The Blog</Link> {/* Blog-Link links vom Logo */}
+              <Link href="/blog">The Blog</Link>
             </li>
             <li className="nav-item">
               <Link href="/about">About</Link>
             </li>
           </ul>
-          {/* Logo in der Mitte */}
           <div className="mx-6">
               <Logo />
           </div>
-          {/* Navigation links auf der rechten Seite */}
           <ul className="flex gap-4">
             <li className="nav-item relative">
               <Link href="/portfolio">Portfolio</Link>
-              {/* Dropdown Menü */}
               <div className="dropdown">
                 <Link href="/portfolio/animals">Animals</Link>
                 <Link href="/portfolio/travel">Travel</Link>
