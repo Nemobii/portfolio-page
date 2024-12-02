@@ -1,9 +1,9 @@
-import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <footer className="w-full bg-grey-dark text-white p-8">
-      {/* Social Media */}
+
       <div className="flex justify-center space-x-6 mb-4">
         <a
           href="https://www.instagram.com/_nicowalker"
@@ -25,7 +25,6 @@ const Footer = () => {
         </a>
       </div>
 
-      {/* Copyright & Rechtliches */}
       <div className="text-center text-sm">
         <p>© {new Date().getFullYear()} Nico Walker. Alle Rechte vorbehalten.</p>
       </div>
