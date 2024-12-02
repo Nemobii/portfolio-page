@@ -6,8 +6,8 @@ const Logo = () => {
             <img
                 src="/portfolio-page/images/logo.png"
                 alt="Logo"
-                width={200} /* Erhöhe die Breite */
-                height={70} /* Erhöhe die Höhe */
+                width={200}
+                height={70}
                 className="object-cover"
             />
         </Link>
