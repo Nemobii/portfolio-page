@@ -37,7 +37,7 @@ export default function Page() {
                             </p>
                             <Link
                                 href="/contact"
-                                className="bg-transparent border border-red-500 text-red-500 px-6 py-2 rounded-lg hover:bg-red-500 hover:text-white transition"
+                                className="bg-gray-500 text-white py-2 px-6 rounded-lg hover:bg-gray-600 transition-colors"
                             >
                                 Kontakt aufnehmen
                             </Link>
