@@ -1,6 +1,6 @@
 'use client';
 
-import Layout from '../../components/Layout'; // Layout-Komponente für Header und Footer
+import Layout from '../../components/Layout';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -9,10 +9,10 @@ const Checkout = () => {
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
   const [payment, setPayment] = useState('');
-  const [phone, setPhone] = useState('');  // Zustand für Telefonnummer
+  const [phone, setPhone] = useState(''); 
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
-  const [iban, setIban] = useState(''); // Zustand für IBAN
-  const [cart, setCart] = useState<any[]>([]); // Zustand für den Warenkorb
+  const [iban, setIban] = useState(''); 
+  const [cart, setCart] = useState<any[]>([]); 
   const router = useRouter();
 
   useEffect(() => {
@@ -21,7 +21,6 @@ const Checkout = () => {
   }, []);
 
   const generateIban = () => {
-    // Generiere eine zufällige IBAN für die Schweiz
     const randomDigits = Math.floor(1000000000 + Math.random() * 9000000000);
     return `CH93 0076 2012 2005 4385 7${randomDigits}`;
   };
@@ -33,11 +32,11 @@ const Checkout = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Überprüfen, ob alle Felder ausgefüllt sind
+
     if (!name || !address || !email || !payment || (payment === 'Twint' && !phone)) {
       alert('Bitte fülle alle Felder aus!');
     } else {
-      // Erstellen des Bestellobjekts
+
       const order = {
         name,
         address,
@@ -47,18 +46,18 @@ const Checkout = () => {
         iban: payment === 'Banküberweisung' ? iban : null,
       };
 
-      // Ausgabe des Bestellobjekts in der Konsole
+
       console.log('Bestellung:', order);
 
-      // Bestellvorgang abschließen
+
       setIsOrderPlaced(true);
 
-      // Entfernen des Warenkorbs aus localStorage
+
       localStorage.removeItem('cart');
 
-      // Weiterleitung nach 3 Sekunden
+
       setTimeout(() => {
-        router.push('/');  // Weiterleitung zur Startseite
+        router.push('/');
       }, 3000);
     }
   };
@@ -69,7 +68,6 @@ const Checkout = () => {
         <div className="w-full max-w-2xl bg-white p-8 rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold text-center mb-6">Checkout</h1>
 
-          {/* Anzeigen der gewählten Produkte und der Gesamtsumme */}
           <div className="mb-6">
             <h2 className="text-2xl font-semibold">Deine Bestellung</h2>
             <div className="border-b py-4 mb-4">
@@ -142,7 +140,7 @@ const Checkout = () => {
                   onChange={(e) => {
                     setPayment(e.target.value);
                     if (e.target.value === 'Banküberweisung') {
-                      setIban(generateIban()); // Generiere eine IBAN, wenn Banküberweisung gewählt wird
+                      setIban(generateIban()); 
                     }
                   }}
                   className="w-full p-2 border border-gray-300 rounded-md"
@@ -155,7 +153,6 @@ const Checkout = () => {
                 </select>
               </div>
 
-              {/* Telefonnummer wird nur angezeigt, wenn Twint gewählt wird */}
               {payment === 'Twint' && (
                 <div>
                   <label className="block text-lg font-semibold">Telefonnummer (für Twint):</label>
@@ -164,13 +161,12 @@ const Checkout = () => {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className="w-full p-2 border border-gray-300 rounded-md"
-                    required={payment === 'Twint'}  // Telefonnummer nur bei Twint erforderlich
+                    required={payment === 'Twint'} 
                     placeholder="079 123 45 67"
                   />
                 </div>
               )}
 
-              {/* Banküberweisungsinformationen */}
               {payment === 'Banküberweisung' && (
                 <div>
                   <h3 className="font-semibold mt-4">Banküberweisung Details:</h3>
