@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ isHome }) => {
             </li>
           </ul>
           <div className="mx-6">
-              <Logo />
+            <Logo />
           </div>
           <ul className="flex gap-4">
             <li className="nav-item relative">
@@ -57,6 +57,12 @@ const Header: React.FC<HeaderProps> = ({ isHome }) => {
             </li>
             <li className="nav-item">
               <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+          {/* Shop Link ganz am Ende */}
+          <ul className="flex gap-4 ml-auto">
+            <li className="nav-item">
+              <Link href="/shop">Shop</Link>
             </li>
           </ul>
         </nav>
