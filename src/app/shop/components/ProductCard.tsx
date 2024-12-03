@@ -3,7 +3,15 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-const ProductCard = ({ product }: any) => {
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+const ProductCard = ({ product }: { product: Product }) => { 
   const [quantity, setQuantity] = useState(1);
 
   const addToCart = () => {

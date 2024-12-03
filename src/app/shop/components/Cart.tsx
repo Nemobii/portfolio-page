@@ -1,26 +1,37 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link'; // Importiere Link für Navigation
+import { useState } from 'react';
+import Link from 'next/link';
 
-const Cart = () => {
-  const [cart, setCart] = useState<any[]>([]);
 
-  useEffect(() => {
-    // Lade den Warenkorb aus dem localStorage, falls vorhanden
-    const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
-    setCart(storedCart);
-  }, []);
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string; 
+}
+
+
+const Cart = ({ cart, setCart }: { cart: Product[], setCart: React.Dispatch<React.SetStateAction<Product[]>> }) => {
+  const handleQuantityChange = (index: number, newQuantity: number) => {
+    if (newQuantity <= 0) return; 
+
+    const updatedCart = [...cart];
+    updatedCart[index].quantity = newQuantity;
+    setCart(updatedCart); 
+    localStorage.setItem('cart', JSON.stringify(updatedCart)); 
+  };
 
   const removeFromCart = (index: number) => {
     const updatedCart = [...cart];
-    updatedCart.splice(index, 1); // Entfernt das Produkt aus dem Array
-    setCart(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart)); // Speichern in localStorage
+    updatedCart.splice(index, 1);
+    setCart(updatedCart); 
+    localStorage.setItem('cart', JSON.stringify(updatedCart)); 
   };
 
   const calculateTotal = () => {
-    return cart.reduce((total, item: any) => total + item.price * item.quantity, 0);
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   return (
@@ -32,15 +43,34 @@ const Cart = () => {
         ) : (
           <div>
             {cart.map((item, index) => (
-              <div key={index} className="border-b py-4 mb-4">
+              <div key={item.id} className="border-b py-4 mb-4">
                 <div className="flex justify-between items-center">
                   <h2 className="text-xl font-semibold">{item.name}</h2>
-                  <button
-                    onClick={() => removeFromCart(index)}
-                    className="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600 transition-colors"
-                  >
-                    Entfernen
-                  </button>
+
+                  {item.quantity > 1 ? (
+                    <div className="flex items-center">
+                      <input
+                        type="number"
+                        value={item.quantity}
+                        onChange={(e) => handleQuantityChange(index, parseInt(e.target.value))}
+                        className="w-16 p-2 border border-gray-300 rounded mr-2"
+                        min="1"
+                      />
+                      <button
+                        onClick={() => removeFromCart(index)}
+                        className="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600 transition-colors"
+                      >
+                        Entfernen
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => removeFromCart(index)}
+                      className="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600 transition-colors"
+                    >
+                      Entfernen
+                    </button>
+                  )}
                 </div>
                 <p className="mt-2">Menge: {item.quantity}</p>
                 <p className="mt-2">Preis: CHF {(item.price * item.quantity).toFixed(2)}</p>
@@ -52,8 +82,13 @@ const Cart = () => {
               </p>
             </div>
 
-            {/* Zur Kasse Button */}
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-between mt-4">
+              <Link
+                href="/shop"
+                className="bg-gray-500 text-white py-1 px-4 rounded-lg hover:bg-gray-600 transition-colors"
+              >
+                Zurück zum Shop
+              </Link>
               <Link
                 href="/shop/checkout"
                 className="bg-gray-400 text-white py-1 px-4 rounded-lg hover:bg-gray-500 transition-colors"

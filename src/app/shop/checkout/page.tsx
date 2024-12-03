@@ -4,15 +4,32 @@ import Layout from '../../components/Layout';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+interface Order {
+  name: string;
+  address: string;
+  email: string;
+  payment: string;
+  phone: string | null;
+  iban: string | null;
+}
+
 const Checkout = () => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
   const [payment, setPayment] = useState('');
-  const [phone, setPhone] = useState(''); 
+  const [phone, setPhone] = useState('');
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
-  const [iban, setIban] = useState(''); 
-  const [cart, setCart] = useState<any[]>([]); 
+  const [iban, setIban] = useState('');
+  const [cart, setCart] = useState<Product[]>([]); 
   const router = useRouter();
 
   useEffect(() => {
@@ -26,18 +43,16 @@ const Checkout = () => {
   };
 
   const calculateTotal = () => {
-    return cart.reduce((total, item: any) => total + item.price * item.quantity, 0);
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-
     if (!name || !address || !email || !payment || (payment === 'Twint' && !phone)) {
       alert('Bitte fülle alle Felder aus!');
     } else {
-
-      const order = {
+      const order: Order = {
         name,
         address,
         email,
@@ -46,15 +61,11 @@ const Checkout = () => {
         iban: payment === 'Banküberweisung' ? iban : null,
       };
 
-
       console.log('Bestellung:', order);
-
 
       setIsOrderPlaced(true);
 
-
       localStorage.removeItem('cart');
-
 
       setTimeout(() => {
         router.push('/');

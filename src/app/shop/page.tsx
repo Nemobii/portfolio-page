@@ -1,7 +1,6 @@
 'use client';
 
 import Layout from '../components/Layout'; 
-import { useState } from 'react';
 import { products } from './utils/products';
 import ProductCard from './components/ProductCard'; 
 import Link from 'next/link'; 
