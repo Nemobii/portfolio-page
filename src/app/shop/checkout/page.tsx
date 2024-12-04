@@ -75,7 +75,7 @@ const Checkout = () => {
 
   return (
     <Layout>
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="bg-grey-light p-6 flex justify-center items-center">
         <div className="w-full max-w-2xl bg-white p-8 rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold text-center mb-6">Checkout</h1>
 

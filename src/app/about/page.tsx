@@ -10,7 +10,7 @@ export default function Page() {
     return (
         <div>
             <Layout>
-                <div className="flex items-center justify-center min-h-screen mb-10">
+                <div className="bg-grey-light p-6 flex justify-center items-center">
                     <div className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg p-12 max-w-5xl w-full">
                         <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
                             <Image 

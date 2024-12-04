@@ -28,7 +28,7 @@ export default function Page() {
 
     return (
         <Layout>
-            <div className="flex justify-center items-center min-h-screen p-10">
+            <div className="flex justify-center items-center p-10">
                 <div className="flex flex-col md:flex-row bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
                     <div className="md:w-1/2 pr-8 mb-8 md:mb-0">
                         <h2 className="text-2xl font-bold mb-4">Gefällt Ihnen, was Sie sehen?</h2>

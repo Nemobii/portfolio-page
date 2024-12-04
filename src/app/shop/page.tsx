@@ -8,7 +8,7 @@ import Link from 'next/link';
 const Shop = () => {
   return (
     <Layout>
-      <div className="bg-grey-light p-6 min-h-screen flex justify-center items-center">
+      <div className="bg-grey-light p-6 flex justify-center items-center">
         <div className="w-full max-w-7xl bg-white p-6 rounded-lg shadow-lg">
 
           <div className="flex justify-center items-center mb-8">

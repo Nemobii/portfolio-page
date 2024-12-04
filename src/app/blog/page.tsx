@@ -1,12 +1,9 @@
 'use client';
-import { useState } from "react";
 import Layout from "../components/Layout";
 import Link from 'next/link';
 
 const BlogPage = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const pages = [
+  const content = [
     {
       title: "Meine letzte Reise",
       content: (
@@ -45,53 +42,25 @@ const BlogPage = () => {
     },
   ];
 
-
-  const handleNextPage = () => {
-    if (currentPage < pages.length) {
-      setCurrentPage((prev) => prev + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prev) => prev - 1);
-    }
-  };
-
   return (
     <Layout>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col">
         <div className="flex-grow flex items-center justify-center px-6 py-12">
           <div className="bg-white shadow-md rounded-lg p-8 max-w-3xl w-full">
-            <h1 className="text-3xl font-bold text-center mb-6">
-              {pages[currentPage - 1].title}
-            </h1>
-            {pages[currentPage - 1].content}
-
-            <div className="mt-6 flex justify-between">
-              <button
-                className={`bg-gray-500 text-white py-2 px-6 rounded-lg hover:bg-gray-600 transition-colors ${
-                  currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
-                }`}
-                onClick={handlePrevPage}
-                disabled={currentPage === 1}
-              >
-                Zurück
-              </button>
-              {currentPage < pages.length ? (
-                <button
-                  className="bg-gray-500 text-white py-2 px-6 rounded-lg hover:bg-gray-600 transition-colors"
-                  onClick={handleNextPage}
-                >
-                  Weiter
+            {content.map((section, index) => (
+              <div key={index} className="mb-8">
+                <h1 className="text-3xl font-bold text-center mb-6">
+                  {section.title}
+                </h1>
+                {section.content}
+              </div>
+            ))}
+            <div className="text-center">
+              <Link href="/portfolio/travel/tansania">
+                <button className="bg-gray-500 text-white py-2 px-6 rounded-lg hover:bg-gray-600 transition-colors">
+                  Zu den Fotos meiner letzten Reise
                 </button>
-              ) : (
-                <Link href="/portfolio/travel/tansania">
-                  <button className="bg-gray-500 text-white py-2 px-6 rounded-lg hover:bg-gray-600 transition-colors">
-                    Zu den Fotos meiner letzten Reise
-                  </button>
-                </Link>
-              )}
+              </Link>
             </div>
           </div>
         </div>
