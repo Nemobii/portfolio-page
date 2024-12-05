@@ -41,7 +41,7 @@ const Travel: React.FC = () => {
           <Link href="/portfolio/travel/london/">
             <Image
               alt="London"
-              src="/portfolio-page/images/Travel/London/IMG_1168-min.JPG"
+              src="/portfolio-page/images/travel/london/IMG_1212-min.JPG"
               width={820}
               height={820}
               className="aspect-square object-cover hover:scale-110 transition-all duration-1000 opacity-50 hover:opacity-100"
