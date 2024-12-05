@@ -16,32 +16,32 @@ const imageFolders: {
     "/portfolio-page/images/Animals/DSC_0704.jpg",
     "/portfolio-page/images/Animals/DSC_0109.jpg",
     "/portfolio-page/images/Animals/DSC_1152.jpg",
-    "/portfolio-page/images/Animals/DSC_2717.jpg",
+    "/portfolio-page/images/Animals/DSC_2717.jpg"
   ],
   travel: {
     CostaRica: [
       "/portfolio-page/images/Travel/CostaRica/DSC_4156-min.JPG",
       "/portfolio-page/images/Travel/CostaRica/DSC_4466-min.JPG",
-      "/portfolio-page/images/Travel/CostaRica/DSC_4111-min.JPG",
+      "/portfolio-page/images/Travel/CostaRica/DSC_4111-min.JPG"
     ],
     London: [
       "/portfolio-page/images/Travel/London/IMG_1166-min.jpg",
       "/portfolio-page/images/Travel/London/IMG_1186-min.jpg",
       "/portfolio-page/images/Travel/London/IMG_1212-min.jpg",
-      "/portfolio-page/images/Travel/London/IMG_9470-min.jpg",
+      "/portfolio-page/images/Travel/London/IMG_9470-min.jpg"
     ],
     Maledives: [
       "/portfolio-page/images/Travel/Maledives/IMG_5584-min.JPEG",
       "/portfolio-page/images/Travel/Maledives/DSC_0047-min.JPG",
       "/portfolio-page/images/Travel/Maledives/DSC_0040-min.JPG",
-      "/portfolio-page/images/Travel/Maledives/DSC_8286-min.JPG",
+      "/portfolio-page/images/Travel/Maledives/DSC_8286-min.JPG"
     ],
     Portugal: [
       "/portfolio-page/images/Travel/Portugal/DSC_5400.jpg",
-      "/portfolio-page/images/Travel/Portugal/DSC_2131.jpg",
+      "/portfolio-page/images/Travel/Portugal/DSC_4189.jpg",
       "/portfolio-page/images/Travel/Portugal/DSC_3775.jpg",
-      "/portfolio-page/images/Travel/Portugal/DSC_2228.jpg",
-  
+      "/portfolio-page/images/Travel/Portugal/DSC_2228.jpg"
+
     ],
     Schweiz: [
       "/portfolio-page/images/Travel/Schweiz/C9EC6A88-2E09-446C-82C9-AB0ABFEFF7BD-min.jpg",
@@ -51,8 +51,7 @@ const imageFolders: {
       "/portfolio-page/images/Travel/Tansania/DSC_1338.jpg",
       "/portfolio-page/images/Travel/Tansania/DSC_1472.jpg",
       "/portfolio-page/images/Travel/Tansania/DSC_2033.jpg",
-      "/portfolio-page/images/Travel/Tansania/DSC_5064.jpg",
-      "/portfolio-page/images/Travel/Tansania/DSC_4195.jpg",
+      "/portfolio-page/images/Travel/Tansania/DSC_4195.jpg"
 
     ],
   },
@@ -61,8 +60,8 @@ const imageFolders: {
     "/portfolio-page/images/Portrait/image00034-min.jpeg",
     "/portfolio-page/images/Portrait/DSC_6674-min.JPEG",
     "/portfolio-page/images/Portrait/DSC_8530-min.JPG",
-    "/portfolio-page/images/Portrait/image00102-min.jpeg",
- 
+    "/portfolio-page/images/Portrait/image00102-min.jpeg"
+
   ],
 };
 
