@@ -12,7 +12,7 @@ const imageFolders: {
 } = {
   animals: [
     "/portfolio-page/images/Animals/DSC_0763.jpg",
-    "/portfolio-page/images/Animals/DSC_0819.JPG",
+    "/portfolio-page/images/Animals/DSC_0819.jpg",
     "/portfolio-page/images/Animals/DSC_0704.jpg",
     "/portfolio-page/images/Animals/DSC_0109.jpg",
     "/portfolio-page/images/Animals/DSC_1152.jpg",
@@ -59,7 +59,7 @@ const imageFolders: {
   portraits: [
     "/portfolio-page/images/Portrait/DSC_6552-min.JPG",
     "/portfolio-page/images/Portrait/image00034-min.jpeg",
-    "/portfolio-page/images/Portrait/DSC_6674-min.JPG",
+    "/portfolio-page/images/Portrait/DSC_6674-min.JPEG",
     "/portfolio-page/images/Portrait/DSC_8530-min.JPG",
     "/portfolio-page/images/Portrait/image00102-min.jpeg",
  
