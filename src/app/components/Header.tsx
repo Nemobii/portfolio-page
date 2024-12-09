@@ -29,7 +29,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`z-20 w-full flex items-center justify-center px-4 py-2 bg-white transition-all duration-300 h-[80px] ${
+      className={`z-[9999] w-full flex items-center justify-center px-4 py-2 bg-white transition-all duration-300 h-[80px] ${
         isFixed ? "fixed top-0 w-full" : ""
       }`}
     >

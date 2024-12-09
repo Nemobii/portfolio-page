@@ -45,7 +45,7 @@ export default function Page() {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-center mb-10">
+                <div className="flex items-center p-6 justify-center mb-10">
                     <div className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg p-12 max-w-5xl w-full">
                         <Map />
                     </div>
